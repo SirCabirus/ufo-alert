@@ -1,7 +1,7 @@
 /************************************************************/
 /*                       UFO Alert                          */
 /*                                                          */
-/* Version 223 vom 18.05.2022                                */
+/* Version 24 vom 20.05.2022                                */
 /*                                                          */
 /* Dies Spiel ist nach dem JavaScript Tutorial für Anfänger */
 /* von Junus Ergin entstanden - siehe:                      */
@@ -899,7 +899,6 @@ function update() {
 
       medoRocketMoves += 1;
       if (medoRocketMoves > 50) {
-        // 15
         medoRocketMoves = 0;
         // Zufallszahl zwischen 1 und 30 erzeugen
         let directionChange = Math.floor(Math.random() * (30 - 1)) + 1;
