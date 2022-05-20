@@ -76,7 +76,7 @@ let stRocket;
 let stEscUfos;
 let stScore;
 let stXbomb;
-const space = "\xa0\xa0\xa0\xa0\xa0";
+const space = "\xa0\xa0\xa0\xa0\xa0"; // fünf Leerzeichen
 
 // Variable für das Hintergrundbild
 let backgroundImage = new Image();
