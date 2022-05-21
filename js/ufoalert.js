@@ -230,13 +230,13 @@ document.onkeyup = function (e) {
   }
 };
 
-/*********************************/
-/*       Spiel starten           */
-/*                               */
-/*    Diese Funktion wird vom    */
-/*    body der html-Seite        */
-/*    aufgerufen                 */
-/*********************************/
+/**************************************/
+/*       Spiel starten                */
+/*                                    */
+/*    Diese Funktion wird über den    */
+/*    body der Seite ufoalert.html    */
+/*    aufgerufen                      */
+/**************************************/
 function startGame() {
   // Ausgabebereich besorgen
   canvas = document.getElementById("canvas");
