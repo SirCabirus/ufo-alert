@@ -328,7 +328,6 @@ function startGame() {
       document.getElementById("startButton").innerHTML = "Restart Game";
     }
 
-
   draw(); // alle Bild-Objekte ausgeben - die Funktion ist rekursiv, d.h. sie ruft sich immer wieder selbst auf
 }
 
@@ -875,6 +874,10 @@ function update() {
         // ein Ufo mehr entkommen - nicht hochzählen wenn nach 2 entkommenen Ufos mehrere gleichzeitig passieren
         if (ufosPassed != ufosMaxPassed) {
           ufosPassed += 1;
+          // Hintergrund kurz ändern - Änderung wird durch changeBackground() rückgängig gemacht 
+          backgroundImage.src = "img/backgroundUfoEscaped.jpg";
+          // Sound abspielen
+          ufoEsacped.play();          
         }
       }
     } // Ende Raumstation
@@ -935,7 +938,7 @@ function update() {
       ufo.x -= ufo.speed;
 
       // Wenn Ufo linken Bildschirmrand erreicht hat Ufo aus Array löschen
-      if (ufo.x < 0) {
+      if (ufo.x < ufo.width * -1) {
         ufos = ufos.filter((u) => u != ufo);
         // ein Ufo mehr entkommen - nicht hochzählen wenn nach 2 entkommenen Ufos mehrere gleichzeitig passieren
         if (ufosPassed != ufosMaxPassed) {
