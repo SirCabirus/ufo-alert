@@ -1,7 +1,7 @@
 /************************************************************/
 /*                       UFO Alert                          */
 /*                                                          */
-/* Version 24 vom 20.05.2022                                */
+/* Version 25 vom 22.05.2022                                */
 /*                                                          */
 /* Dies Spiel ist nach dem JavaScript Tutorial für Anfänger */
 /* von Junus Ergin entstanden - siehe:                      */
