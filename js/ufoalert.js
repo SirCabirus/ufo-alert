@@ -23,6 +23,7 @@
 // Variablen für den Zugriff auf die Zeichenfläche
 let canvas;
 let ctx;
+let wirdNichtGebraucht;
 
 // Konstanten für das zeitliche Aufruf-Intervall von Funktionen
 const changeBackgroundIntervall = 2000; // 2 Sekunden
