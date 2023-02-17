@@ -1,4 +1,6 @@
-# ufo-alert
+# UFO Alarm aka UFO Alert
+
+![UFO Alarm](/img/UfoAlarmTitle.jpg)
 A retro style arcade game written in JavaScript. I am just learning JavaScript and this game is based on the 
 JavaScript Tutorial for Beginners by Junus Ergin 
 - see: https://www.youtube.com/watch?v=eWLDAAMsD-c
