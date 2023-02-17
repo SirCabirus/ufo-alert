@@ -306,47 +306,47 @@ function initializeSound() {
 
     xBombSnd = new Howl({
       src: ["snd/xBomb.mp3"],
-      autoplay: true,
+      autoplay: false,
       html5: true,
     });
   
     explode = new Howl({
       src: ["snd/explosion.mp3"],
-      autoplay: true,
+      autoplay: false,
       html5: true,
     });
   
     rockethit = new Howl({
       src: ["snd/explode.mp3"],
-      autoplay: true,
+      autoplay: false,
       html5: true,
     });
   
     medoRockethit = new Howl({
       src: ["snd/medoRocket.wav"],
-      autoplay: true,
+      autoplay: false,
       html5: true,
     });
   
     missilehit = new Howl({
       src: ["snd/dong.mp3"],
-      autoplay: true,
+      autoplay: false,
       html5: true,
     });
   
     ufoEsacped = new Howl({
       src: ["snd/ufoEscaped.mp3"],
-      autoplay: true,
+      autoplay: false,
       html5: true,
     });
   
     gameOverSnd = new Howl({
       src: ["snd/game-over.wav"],
-      autoplay: true,
+      autoplay: false,
       html5: true,
     });
   
-    gameMusic = new Howl({ src: ["snd/game.mp3"], autoplay: true, loop: true, html5: true });
+    gameMusic = new Howl({ src: ["snd/game.mp3"], autoplay: false, loop: true, html5: true });
 
     soundInitialized = true;
     console.log("Sound-Modul wurde initialisiert.");      
