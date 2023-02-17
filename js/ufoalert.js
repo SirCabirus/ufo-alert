@@ -302,7 +302,7 @@ function startGame() {
  **********************************/
 function initializeSound() {
     // Soundeffekte initialisieren
-    shootsnd = new Howl({ src: ["snd/shoot.mp3"], autoplay: true, html5: true });
+    shootsnd = new Howl({ src: ["snd/shoot.mp3"], autoplay: false, html5: true });
 
     xBombSnd = new Howl({
       src: ["snd/xBomb.mp3"],
