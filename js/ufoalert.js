@@ -1,7 +1,7 @@
 /************************************************************/
 /*                       UFO Alert                          */
 /*                                                          */
-/* Version 25 vom 22.05.2022                                */
+/* Version 26 vom 17.02.2023                                */
 /*                                                          */
 /* Dies Spiel ist nach dem JavaScript Tutorial für Anfänger */
 /* von Junus Ergin entstanden - siehe:                      */
@@ -10,6 +10,10 @@
 /* Vielen Dank für dieses tolle Tutorial, das mich          */
 /* motiviert hat dieses Spiel zu schreiben, welches         */
 /* zahlreiche Änderungen und Erweiterungen enthält.         */
+/*                                                          */
+/* Das Logo Ufo Alarm wurde aus dem Film                    */
+/* 'Shaun das Schaf UFO-Alarm' entlehnt.                    */
+/*                                                          */
 /*                                                          */
 /* Frank Wolter                                             */
 /* https://www.sircabirus.com/                              */
@@ -61,9 +65,13 @@ let missilehit;
 let gameOverSnd;
 let xBombSnd;
 let ufoEsacped;
-
 let gameMusic;
+
+// Flag Musik abspielen
 let music = false;
+
+// Flag Sound initialisiert
+let soundInitialized = false;
 
 // Variablen für die Tastatureingaben
 let KEY_SPACE = false; // die Leertaste
@@ -186,6 +194,11 @@ let shots = [];
 /* wenn Taste gedrückt wurde      */
 /**********************************/
 document.onkeydown = function (e) {
+  // beim ersten Tastendruck Sound initialisieren
+  if (!soundInitialized) {
+    initializeSound();
+  }
+
   // console.log(">" + e.key + "<");
   // Leertaste gedrückt - keine Schüsse, wenn Rakete getroffen und im 'Boom'-Status ist
   if (e.key == " " && !collision) {
@@ -244,53 +257,6 @@ function startGame() {
   // Bild-Objekte laden
   loadImages();
 
-  // Soundeffekte initialisieren
-  shootsnd = new Howl({ src: ["snd/shoot.mp3"], autoplay: true, html5: true });
-
-  xBombSnd = new Howl({
-    src: ["snd/xBomb.mp3"],
-    autoplay: true,
-    html5: true,
-  });
-
-  explode = new Howl({
-    src: ["snd/explosion.mp3"],
-    autoplay: true,
-    html5: true,
-  });
-
-  rockethit = new Howl({
-    src: ["snd/explode.mp3"],
-    autoplay: true,
-    html5: true,
-  });
-
-  medoRockethit = new Howl({
-    src: ["snd/medoRocket.wav"],
-    autoplay: true,
-    html5: true,
-  });
-
-  missilehit = new Howl({
-    src: ["snd/dong.mp3"],
-    autoplay: true,
-    html5: true,
-  });
-
-  ufoEsacped = new Howl({
-    src: ["snd/ufoEscaped.mp3"],
-    autoplay: true,
-    html5: true,
-  });
-
-  gameOverSnd = new Howl({
-    src: ["snd/game-over.wav"],
-    autoplay: true,
-    html5: true,
-  });
-
-  gameMusic = new Howl({ src: ["snd/game.mp3"], autoplay: true, loop: true, html5: true });
-
   // Aufruf von Funktionen, die im zeitlichen Intervall immer wieder aufgerufen werden
   changeBackgroundHandle = setInterval(changeBackground, changeBackgroundIntervall);
   updateHandle = setInterval(update, updateIntervall);
@@ -329,6 +295,61 @@ function startGame() {
     }
 
   draw(); // alle Bild-Objekte ausgeben - die Funktion ist rekursiv, d.h. sie ruft sich immer wieder selbst auf
+}
+
+/**********************************
+ * Initialisiert die Sound-Effekte
+ **********************************/
+function initializeSound() {
+    // Soundeffekte initialisieren
+    shootsnd = new Howl({ src: ["snd/shoot.mp3"], autoplay: true, html5: true });
+
+    xBombSnd = new Howl({
+      src: ["snd/xBomb.mp3"],
+      autoplay: true,
+      html5: true,
+    });
+  
+    explode = new Howl({
+      src: ["snd/explosion.mp3"],
+      autoplay: true,
+      html5: true,
+    });
+  
+    rockethit = new Howl({
+      src: ["snd/explode.mp3"],
+      autoplay: true,
+      html5: true,
+    });
+  
+    medoRockethit = new Howl({
+      src: ["snd/medoRocket.wav"],
+      autoplay: true,
+      html5: true,
+    });
+  
+    missilehit = new Howl({
+      src: ["snd/dong.mp3"],
+      autoplay: true,
+      html5: true,
+    });
+  
+    ufoEsacped = new Howl({
+      src: ["snd/ufoEscaped.mp3"],
+      autoplay: true,
+      html5: true,
+    });
+  
+    gameOverSnd = new Howl({
+      src: ["snd/game-over.wav"],
+      autoplay: true,
+      html5: true,
+    });
+  
+    gameMusic = new Howl({ src: ["snd/game.mp3"], autoplay: true, loop: true, html5: true });
+
+    soundInitialized = true;
+    console.log("Sound-Modul wurde initialisiert.");      
 }
 
 /*****************************/
